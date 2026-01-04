@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
+import { Leverage } from '../components/Leverage';
 import { FeaturedWork } from '../components/FeaturedWork';
 import { motion } from 'framer-motion';
 
@@ -12,6 +13,7 @@ export const Home: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <Hero />
+      <Leverage />
       <FeaturedWork />
     </motion.div>
   );
