@@ -4,129 +4,135 @@ export const projects: Project[] = [
   {
     id: 'ingenuity-lab',
     title: 'Ingenuity Lab',
-    shortDescription: 'Internal no-code UI editor for non-technical teams.',
-    impactMetric: '750+ production styling bundles shipped',
+    shortDescription: 'No-code UI editor enabling non-technical teams to ship production-grade UI changes safely.',
+    impactMetric: '750+ production styling bundles shipped autonomously',
     heroImage: 'https://picsum.photos/1200/600?grayscale&blur=2',
-    subtitle: 'Empowering marketing teams to ship UI changes without engineering bottlenecks.',
+    subtitle: 'Eliminating engineering bottlenecks by turning UI changes into safe, automated production releases.',
     credibilityBullets: [
       'Demoed to 2,000+ employees',
       'Showcased by CTO at All-Hands',
       'Generated 4,000+ lines of production code'
     ],
     problem: {
-      text: 'Marketing teams needed to make frequent styling changes to landing pages but were blocked by the engineering deployment cycle. This resulted in a 2-week lead time for simple color or text updates, frustrating stakeholders and wasting valuable engineering hours on pixel-pushing.'
+      text: 'Marketing and UX teams needed to make frequent styling changes across live e-commerce sites. Even trivial updates (copy, spacing, colours) required engineering intervention, introducing 1–2 week lead times, deployment risk, and significant opportunity cost for developers.'
     },
     constraints: [
-      'Non-technical user base (Marketing/Design)',
-      'Must produce production-grade React code',
-      'Zero downtime allowed during bundle injection',
-      'Strict brand compliance guardrails'
+      'Non-technical end users (Marketing & Design)',
+      'Must generate production-grade, reviewable React code',
+      'Zero-downtime injection into live multi-tenant sites',
+      'Strict design-system and brand-compliance guardrails'
     ],
     solution: {
       images: [
         {
           src: 'https://picsum.photos/800/500?random=1',
-          alt: 'Drag-and-drop UI Editor Interface',
-          caption: 'The visual editor allows direct manipulation of component properties, mapping to our design system tokens.'
+          alt: 'Drag-and-drop UI editor',
+          caption: 'A visual editor allowing non-technical users to directly manipulate UI components mapped to design-system tokens.'
         },
         {
           src: 'https://picsum.photos/800/500?random=2',
-          alt: 'Live Preview and Approval Flow',
-          caption: 'Real-time preview with an integrated approval workflow ensures no breaking changes reach production.'
+          alt: 'Live preview and approval workflow',
+          caption: 'Real-time preview with automated validation and approval gates before production release.'
         }
-      ]
+      ],
+      text: 'I designed and built a no-code UI editor that converts visual interactions into deterministic, production-ready React code. Changes are validated against brand and safety rules, previewed in real time, and deployed automatically without engineering involvement.'
     },
     impactStats: [
-      { label: 'Adoption', value: '100%', description: 'Marketing team adoption' },
-      { label: 'Speed', value: '2 Weeks → 5 Mins', description: 'Time to ship style changes' },
-      { label: 'Volume', value: '750+', description: 'Bundles deployed to prod' },
-      { label: 'Code', value: '4k+', description: 'Lines of code generated' }
+      { label: 'Adoption', value: '100%', description: 'Adoption across Marketing & UX teams' },
+      { label: 'Speed', value: 'Weeks → Minutes', description: 'Time to ship UI changes' },
+      { label: 'Scale', value: '750+', description: 'Live bundles shipped to production' },
+      { label: 'Efficiency', value: '4,000+', description: 'Lines of correct code generated automatically' }
     ],
-    architectureDiagram: 'https://picsum.photos/800/400?random=3'
+    architectureDiagram: 'https://picsum.photos/800/400?random=3',
+    techStack: ['Astro', 'React', 'TypeScript', 'Cloudflare Workers', 'CI/CD', 'Design Systems']
   },
   {
     id: 'ecommerce-platform',
-    title: 'E-commerce Platform',
-    shortDescription: 'Migrating 100+ sites to a unified Next.js architecture.',
-    impactMetric: '£100M+ revenue processed over Black Friday',
+    title: 'Multi-Tenant E-commerce Platform',
+    shortDescription: 'Modern headless platform supporting 100+ high-traffic brand sites.',
+    impactMetric: '£100M+ processed during Black Friday peak',
     heroImage: 'https://picsum.photos/1200/600?grayscale&blur=2',
-    subtitle: 'A high-performance, multi-tenant headless commerce solution.',
+    subtitle: 'Re-architecting a fragile monolith into a scalable, high-performance commerce platform.',
     credibilityBullets: [
       'Unified 100+ distinct web properties',
       'Zero downtime migration',
       'Reduced build times by 92%'
     ],
     problem: {
-      text: 'The legacy monolith was crumbling under traffic spikes. With 100+ distinct brand sites running on a single fragile PHP codebase, deployment was risky (40+ mins) and performance was poor (LCP > 4s). We needed a modern, scalable architecture.'
+      text: 'A legacy monolithic PHP platform was struggling under scale. Deployments took 40+ seconds, page payloads exceeded 5MB, and traffic spikes posed serious outage risk—especially approaching Black Friday.'
     },
     constraints: [
-      'Multi-tenancy: Single codebase, 100+ configs',
-      'SEO retention is critical',
-      'Hard deadline: Black Friday',
-      'Must support legacy payment gateways'
+      'Single codebase serving 100+ tenants',
+      'SEO preservation during migration',
+      'Immovable Black Friday deadline',
+      'Legacy payments and integrations required'
     ],
     solution: {
       images: [
         {
           src: 'https://picsum.photos/800/500?random=4',
-          alt: 'Performance Dashboard',
-          caption: 'Custom Grafana dashboard tracking Core Web Vitals across all tenants in real-time.'
+          alt: 'Core Web Vitals dashboard',
+          caption: 'Grafana dashboards monitoring performance and stability across all tenants.'
         },
         {
           src: 'https://picsum.photos/800/500?random=5',
-          alt: 'CI/CD Pipeline',
-          caption: 'Optimized build pipeline using Nx to only rebuild affected tenants.'
+          alt: 'CI/CD pipeline',
+          caption: 'Incremental CI/CD pipelines reducing build and deploy times by over 90%.'
         }
-      ]
+      ],
+      text: 'I helped design and implement a multi-tenant Next.js/Astro architecture with aggressive performance optimisation, feature-flagged tenant customisation, and highly optimised CI/CD workflows.'
     },
     impactStats: [
-      { label: 'Revenue', value: '£100M+', description: 'Processed seamlessly' },
-      { label: 'Performance', value: '1.5MB', description: 'Reduced from 5MB' },
+      { label: 'Revenue', value: '£100M+', description: 'Processed over Black Friday' },
+      { label: 'Payload', value: '5MB → 1.5MB', description: 'Average page weight reduction' },
       { label: 'Build Time', value: '40s → 3s', description: 'Incremental builds' },
-      { label: 'Uptime', value: '99.99%', description: 'During peak traffic' }
+      { label: 'Reliability', value: '99.99%', description: 'Uptime during peak traffic' }
     ],
-    architectureDiagram: 'https://picsum.photos/800/400?random=6'
+    architectureDiagram: 'https://picsum.photos/800/400?random=6',
+    techStack: ['Astro', 'React', 'TypeScript', 'Cloudflare Workers', 'Grafana', 'CI/CD']
   },
   {
     id: 'little-guy',
     title: 'Little Guy',
-    shortDescription: 'AI automation agent integrated with Microsoft Teams.',
-    impactMetric: 'Sole owner: Design to Deployment',
+    shortDescription: 'LLM-powered automation agent embedded directly in Microsoft Teams.',
+    impactMetric: 'End-to-end ownership: architecture, security, deployment',
     heroImage: 'https://picsum.photos/1200/600?grayscale&blur=2',
-    subtitle: 'Bringing LLM-powered workflows to internal communication channels.',
+    subtitle: 'Reducing cognitive load by bringing AI assistance into everyday engineering workflows.',
     credibilityBullets: [
       'Automates daily standup aggregation',
       'Vector-search over internal wiki',
       'Used by 5 engineering squads'
     ],
     problem: {
-      text: 'Information silos were slowing down cross-team collaboration. Engineers spent too much time searching for documentation or answering repetitive questions in Slack/Teams. We needed an intelligent interface to our internal knowledge base.'
+      text: 'Engineers lost time searching documentation and answering repetitive questions across Teams. Knowledge lived in silos, and onboarding new team members was inefficient.'
     },
     constraints: [
-      'Data privacy: No PII sent to public models',
-      'Must integrate with existing OAuth flow',
-      'Low latency responses required (<2s)',
-      'Cost efficiency constraint'
+      'Strict data-privacy requirements',
+      'OAuth-based identity and permissions',
+      'Low-latency responses (<2s)',
+      'Cost-efficient LLM usage'
     ],
     solution: {
       images: [
         {
           src: 'https://picsum.photos/800/500?random=7',
-          alt: 'Teams Bot Conversation',
-          caption: 'Natural language interface allowing engineers to query documentation directly within chat.'
+          alt: 'Teams bot conversation',
+          caption: 'Natural language queries answered directly inside Microsoft Teams.'
         },
         {
           src: 'https://picsum.photos/800/500?random=8',
-          alt: 'RAG Workflow Diagram',
-          caption: 'Retrieval Augmented Generation pipeline overview showing embedding and retrieval steps.'
+          alt: 'RAG pipeline',
+          caption: 'Retrieval-Augmented Generation pipeline with embeddings and contextual grounding.'
         }
-      ]
+      ],
+      text: 'I built an AI agent using RAG techniques to surface internal knowledge contextually inside Teams, reducing interruption and improving response quality while maintaining strict data controls.'
     },
     impactStats: [
-      { label: 'Queries', value: '500+', description: 'Daily questions answered' },
+      { label: 'Usage', value: '500+', description: 'Daily questions answered' },
       { label: 'Time Saved', value: '~10h', description: 'Per week per squad' },
-      { label: 'Accuracy', value: '94%', description: 'Verified answer rate' },
-      { label: 'Cost', value: '<$50', description: 'Monthly run cost' }
-    ]
+      { label: 'Accuracy', value: '94%', description: 'Verified responses' },
+      { label: 'Cost', value: '<$50', description: 'Monthly runtime cost' }
+    ],
+    techStack: ['Python', 'n8n', 'Vector Databases', 'LLMs', 'GKE', 'OAuth']
   }
 ];

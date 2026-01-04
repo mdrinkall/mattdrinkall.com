@@ -9,12 +9,12 @@ export const Footer: React.FC = () => {
           Built with care.
         </div>
         <div className="flex gap-6">
-          <a
+          {/* <a
             href={socials.email}
             className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors"
           >
             Email
-          </a>
+          </a> */}
           <a
             href={socials.linkedin}
             target="_blank"

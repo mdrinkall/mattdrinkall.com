@@ -24,7 +24,9 @@ export interface Project {
   constraints: string[];
   solution: {
     images: ProjectImage[];
+    text: string;
   };
   impactStats: ProjectStats[];
   architectureDiagram?: string;
+  techStack?: string[];
 }
