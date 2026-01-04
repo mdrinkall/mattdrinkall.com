@@ -1,12 +1,28 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { socials } from '../config/socials';
 
 export const Navigation: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isHome = location.pathname === '/';
+
+  const handleWorkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (isHome) {
+      const section = document.getElementById('featured-work');
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('featured-work');
+        section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  };
 
   return (
     <motion.nav
@@ -21,12 +37,13 @@ export const Navigation: React.FC = () => {
         </Link>
 
         <div className="flex gap-8">
-          <Link
-            to="/"
+          <a
+            href="#featured-work"
+            onClick={handleWorkClick}
             className={`text-sm font-medium transition-colors ${isHome ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
           >
             Work
-          </Link>
+          </a>
           <a
             href={socials.linkedin}
             target="_blank"

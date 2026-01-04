@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: 'Ingenuity Lab',
     shortDescription: 'No-code UI editor enabling non-technical teams to ship production-grade UI changes safely.',
     impactMetric: '750+ production styling bundles shipped autonomously',
-    heroImage: 'https://picsum.photos/1200/600?grayscale&blur=2',
+    heroImage: 'https://c4aoo4zznfhkvamz.public.blob.vercel-storage.com/IMG_3205.jpg',
     subtitle: 'Eliminating engineering bottlenecks by turning UI changes into safe, automated production releases.',
     credibilityBullets: [
       'Demoed to 2,000+ employees',

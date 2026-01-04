@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
 
 export const FeaturedWork: React.FC = () => {
   return (
-    <section className="py-12 max-w-6xl mx-auto px-6">
+    <section id="featured-work" className="py-12 max-w-6xl mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
