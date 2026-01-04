@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Alex Dev
+            Matthew Drinkall
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-8 font-light">
             Product-focused software engineer building internal platforms and AI systems used by thousands.

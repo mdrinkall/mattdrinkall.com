@@ -1,4 +1,5 @@
 import React from 'react';
+import { socials } from '../config/socials';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,9 +9,28 @@ export const Footer: React.FC = () => {
           Built with care.
         </div>
         <div className="flex gap-6">
-          <a href="#" className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors">Email</a>
-          <a href="#" className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors">LinkedIn</a>
-          <a href="#" className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors">GitHub</a>
+          <a
+            href={socials.email}
+            className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors"
+          >
+            Email
+          </a>
+          <a
+            href={socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-emerald-600 text-sm font-medium transition-colors"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </footer>
