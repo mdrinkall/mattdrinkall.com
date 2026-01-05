@@ -27,6 +27,10 @@ export interface Project {
     text: string;
   };
   impactStats: ProjectStats[];
-  architectureDiagram?: string;
+  video?: string;
   techStack?: string[];
+  externalLink?: {
+    url: string;
+    label: string;
+  };
 }

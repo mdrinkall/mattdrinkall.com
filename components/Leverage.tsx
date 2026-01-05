@@ -1,30 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-interface LeveragePrincipleProps {
-  title: string;
-  body: string;
-  example: string;
+interface KeyMetricProps {
+  label: string;
+  metric: string;
+  description: string;
   delay: number;
 }
 
-const LeveragePrinciple: React.FC<LeveragePrincipleProps> = ({ title, body, example, delay }) => {
+const KeyMetric: React.FC<KeyMetricProps> = ({ label, metric, description, delay }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      className="flex flex-col"
+      className="flex flex-col p-5 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
     >
-      <h3 className="text-lg font-semibold text-slate-900 mb-3">
-        {title}
-      </h3>
-      <p className="text-slate-600 leading-relaxed mb-4">
-        {body}
-      </p>
-      <p className="text-sm text-slate-500 leading-relaxed">
-        {example}
+      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+        {label}
+      </div>
+      <div className="text-2xl md:text-3xl font-bold text-emerald-600 mb-3">
+        {metric}
+      </div>
+      <p className="text-sm text-slate-700 leading-relaxed">
+        {description}
       </p>
     </motion.div>
   );
@@ -41,41 +41,38 @@ export const Leverage: React.FC = () => {
           transition={{ duration: 0.4 }}
           className="text-2xl md:text-3xl font-semibold text-slate-900 mb-12 md:mb-16 tracking-tight"
         >
-          How I Create Leverage
+          Key Impact Metrics
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
-          <LeveragePrinciple
-            title="Product Judgment"
-            body="I identify the bottleneck that actually slows teams down — not the loudest one — and design systems that remove it permanently."
-            example="Example: replacing weeks of UI deployment friction with autonomous styling pipelines for non-technical teams."
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <KeyMetric
+            label="Autonomy"
+            metric="500+"
+            description="Styling changes released to live sites by non-technical teams using my UI editor—no engineering intervention required."
             delay={0}
           />
 
-          <LeveragePrinciple
-            title="Systems Over Features"
-            body="I build platforms that compound over time: guardrails, observability, and ownership models that scale beyond the first release."
-            example="Example: multi-tenant commerce architecture that sustained £100M+ peak traffic without downtime."
+          <KeyMetric
+            label="Efficiency"
+            metric="24hrs → 3hrs"
+            description="Support bot on Teams reduced mean ticket response from over 24 hours to instant replies, with changes going live in under 3 hours average."
             delay={0.1}
           />
 
-          <LeveragePrinciple
-            title="Trustworthy AI in Production"
-            body="I ship AI where failure matters — with human-in-the-loop workflows, auditability, latency guarantees, and cost controls."
-            example="Example: internal RAG agents used daily across engineering and operations."
+          <KeyMetric
+            label="Performance"
+            metric="5MB → 1.5MB"
+            description="Reduced homepage size from 5MB to 1.5MB and dev build time from 40s to 3s on the e-commerce platform."
             delay={0.2}
           />
-        </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-sm text-slate-500 text-center md:text-left max-w-3xl"
-        >
-          I'm trusted with ambiguous, high-stakes problems because I optimise for outcomes, not optics.
-        </motion.p>
+          <KeyMetric
+            label="AI Systems"
+            metric="4,000+"
+            description="Lines of production-grade code automatically generated and deployed by my AI systems."
+            delay={0.3}
+          />
+        </div>
       </div>
     </section>
   );

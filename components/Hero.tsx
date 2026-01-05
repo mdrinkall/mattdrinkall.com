@@ -26,28 +26,24 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-wrap gap-3">
-            <StatPill text="Company-wide platform owner" />
-            <StatPill text="CTO showcased work" />
-            <StatPill text="£100M+ revenue systems" />
+            <StatPill text="Largest platform contributor" />
+            <StatPill text="Demoed to 2,000+ employees" />
+            <StatPill text="£100M+ processed annually" />
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="relative hidden md:block"
         >
-          {/* Abstract geometric illustration placeholder using pure CSS/SVG */}
-          <div className="w-full aspect-square bg-gradient-to-tr from-slate-100 to-slate-50 rounded-2xl overflow-hidden relative border border-slate-100">
-             <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-emerald-500/5 rounded-full blur-3xl" />
-             <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-blue-500/5 rounded-full blur-3xl" />
-             <div className="absolute inset-0 flex items-center justify-center opacity-30">
-               <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="4 4"/>
-                  <circle cx="100" cy="100" r="40" stroke="#94A3B8" strokeWidth="1"/>
-               </svg>
-             </div>
+          <div className="w-full aspect-video rounded-2xl overflow-hidden relative border border-slate-200">
+            <img
+              src="https://c4aoo4zznfhkvamz.public.blob.vercel-storage.com/IMG_3205.jpg"
+              alt="Landing page"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </div>

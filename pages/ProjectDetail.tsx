@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Code2, Database, Cloud, Zap, Box, Globe, Cpu, Blocks, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const ProjectDetail: React.FC = () => {
@@ -23,6 +23,18 @@ export const ProjectDetail: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
+  const getTechIcon = (tech: string) => {
+    const techLower = tech.toLowerCase();
+    if (techLower.includes('react') || techLower.includes('astro') || techLower.includes('next')) return Code2;
+    if (techLower.includes('database') || techLower.includes('postgres') || techLower.includes('sql')) return Database;
+    if (techLower.includes('cloud') || techLower.includes('worker') || techLower.includes('gke')) return Cloud;
+    if (techLower.includes('ci/cd') || techLower.includes('pipeline')) return Zap;
+    if (techLower.includes('docker') || techLower.includes('container')) return Box;
+    if (techLower.includes('api') || techLower.includes('graphql')) return Globe;
+    if (techLower.includes('python') || techLower.includes('typescript') || techLower.includes('javascript')) return Cpu;
+    return Blocks;
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -40,7 +52,7 @@ export const ProjectDetail: React.FC = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <motion.section variants={fadeInUp} className="mb-20">
+      <motion.section variants={fadeInUp} className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
           {project.title}
         </h1>
@@ -56,10 +68,30 @@ export const ProjectDetail: React.FC = () => {
           ))}
         </ul>
 
-        <div className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-slate-100">
-           <img src={project.heroImage} alt="Hero" className="w-full h-full object-cover" />
+        <div className="w-full rounded-xl overflow-hidden shadow-2xl bg-slate-100">
+           <img src={project.heroImage} alt="Hero" className="w-full h-auto object-contain" />
         </div>
       </motion.section>
+
+      {/* Tech Stack */}
+      {project.techStack && project.techStack.length > 0 && (
+        <motion.section variants={fadeInUp} className="mb-20">
+          <div className="flex flex-wrap gap-3">
+            {project.techStack.map((tech, idx) => {
+              const Icon = getTechIcon(tech);
+              return (
+                <div
+                  key={idx}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-700 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all"
+                >
+                  <Icon className="w-4 h-4 text-emerald-600" />
+                  {tech}
+                </div>
+              );
+            })}
+          </div>
+        </motion.section>
+      )}
 
       {/* The Problem */}
       <motion.section variants={fadeInUp} className="mb-20 bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-100">
@@ -96,7 +128,7 @@ export const ProjectDetail: React.FC = () => {
                    {img.caption}
                  </p>
               </div>
-              <div className={`rounded-xl overflow-hidden border border-slate-200 shadow-lg ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
+              <div className={`rounded-xl overflow-hidden border border-slate-200 shadow-lg transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:z-10 cursor-pointer ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
                  <img src={img.src} alt={img.alt} className="w-full h-auto" />
               </div>
             </div>
@@ -122,17 +154,40 @@ export const ProjectDetail: React.FC = () => {
       <motion.section variants={fadeInUp} className="mb-12 border border-slate-200 rounded-xl p-8 bg-white">
         <h3 className="text-lg font-bold text-slate-900 mb-4">Ownership & Role</h3>
         <p className="text-slate-700 leading-relaxed">
-          I owned this project end-to-end: from initial problem definition and technical design, through to implementation, deployment, and internal evangelism.
+          {project.solution.text}
         </p>
       </motion.section>
 
-      {/* Architecture (Optional) */}
-      {project.architectureDiagram && (
+      {/* Video (Optional) */}
+      {project.video && (
         <motion.section variants={fadeInUp} className="mb-20">
-          <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-8">High-Level Architecture</h2>
-          <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-            <img src={project.architectureDiagram} alt="Architecture Diagram" className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-500" />
+          <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <video
+              src={project.video}
+              controls
+              muted
+              loop
+              className="w-full h-auto"
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
+        </motion.section>
+      )}
+
+      {/* External Link Button (Optional) */}
+      {project.externalLink && (
+        <motion.section variants={fadeInUp} className="mb-20">
+          <a
+            href={project.externalLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg group"
+          >
+            {project.externalLink.label}
+            <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </motion.section>
       )}
 
