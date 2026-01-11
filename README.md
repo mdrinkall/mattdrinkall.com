@@ -1,21 +1,49 @@
-# Portfolio
+# Portfolio Website
 
-A simple portfolio website to showcase my best projects.
+A clean, scalable portfolio website showcasing my best work and projects. Built for simplicity and ease of use.
 
-Built with React and developed with Claude Code.
+🔗 **Live Site:** [mattdrinkall.vercel.app](https://mattdrinkall.vercel.app/)
 
-## Run Locally
+## About
 
-**Prerequisites:** Node.js
+This repository contains the source code for my personal portfolio website. It's designed to be straightforward and professional, making it easy for recruiters and potential clients to view my work and skills.
 
-1. Install dependencies:
+**Tech Stack:**
+- React
+- Vite
+- Deployed on Vercel
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd portfolio
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Run the development server:
+3. **Start the development server**
    ```bash
    npm run dev
    ```
 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
+4. **View in browser**
+
+   Open [http://localhost:5173](http://localhost:5173)
+
+## Deployment
+
+This site is automatically deployed to Vercel. Any changes pushed to the main branch will trigger a new deployment.
+
+## Purpose
+
+This is a basic, scalable portfolio website designed to showcase projects in a clean and accessible way. The focus is on simplicity and user experience rather than complex features.
